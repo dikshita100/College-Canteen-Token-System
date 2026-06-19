@@ -1,24 +1,45 @@
-import React from 'react'
-import Home from './pages/Home'
-import Contactus from './pages/Contactus'
-import Aboutus from './pages/Aboutus'
-import Login from './pages/Login'
-import Navbar from './pages/Navbar';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-  const App = () => {
+import "./App.css";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+
+import Home from "./Home";
+import About from "./AboutUs";
+import Contact from "./ContactUs";
+import Login from "./Login";
+import Menu from "./Menu";
+import Order from "./Order";
+import Payment from "./Payment";
+
+function App() {
   return (
     <BrowserRouter>
-    
-      <Navbar />
+
+      <nav className="navbar">
+                <img src="logo1.png" style={{ width: "350px", height: "252x" }}></img>
+
+        <div className="navlinks">
+          <Link to="/">Home</Link>
+          <br/>
+          <Link to="/about">About Us</Link>
+          <br/>
+          <Link to="/contact">Contact Us</Link>
+          <br/>
+          <Link to="/login">Login</Link>
+        </div>
+
+      </nav>
+
       <Routes>
-       <Route path='/' element={<Home />}></Route>
-       <Route path='/aboutus' element={<Aboutus />}></Route>
-       <Route path='/contactus' element={<Contactus />}></Route>
-       <Route path='/login' element={<Login />}></Route>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/menu" element={<Menu />} />
+        <Route path="/order" element={<Order />} />
+        <Route path="/payment" element={<Payment />} />
+      </Routes>
 
-
-    </Routes>
     </BrowserRouter>
-  )
+  );
 }
-export default App
+
+export default App;
