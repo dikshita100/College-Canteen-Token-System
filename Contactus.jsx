@@ -1,11 +1,27 @@
-import React from 'react'
+const Contact = () => {
+  return (
+    <div className="contact">
 
-const Contactus = () => {
-        const contactlist=[{id:1, name:"", mobile: 9435833211}, {id:2, name:"", mobile: 9953402023}];
+      <h2>Contact Us</h2>
 
-    return (
-       contactlist.map((list)=>(<div>For more information contact staff {list.name}, the mobile no. is {list.mobile}</div>))
-    )
+      <input
+        type="text"
+        placeholder="Enter Name"
+      />
+
+      <input
+        type="email"
+        placeholder="Enter Email"
+      />
+
+      <textarea
+        placeholder="Message"
+      ></textarea>
+
+      <button>Send</button>
+
+    </div>
+  )
 }
 
-export default Contactus
+export default Contact
