@@ -1,13 +1,46 @@
-import React from "react";
+import { useNavigate } from "react-router-dom";
+
 const Home = () => {
-    return(
-        <div>
-            <br/>
-            <h2>College Canteen Token System</h2>
-            <br/>
-            <img  src='homepage.png' className='w-175 h-90'></img>
-        
+
+  const navigate = useNavigate();
+
+  return (
+    <>
+      <div className="hero">
+
+        <h3>
+          Skip Long Queues and <br/>  Order Food
+          Easily Through Digital Tokens
+        </h3>
+
+        <div className="btns">
+          <button onClick={() => navigate("/order")}>Order Now</button>
+          <button onClick={() => navigate("/menu")}>View Menu</button>
         </div>
-)
+
+      </div>
+
+      <div className="features">
+
+        <div className="card">
+          <h3>📱 Online Ordering</h3>
+        </div>
+
+        <div className="card">
+          <h3>🎫 Token Generation</h3>
+        </div>
+
+        <div className="card">
+          <h3>🥗 Dietary Filters</h3>
+        </div>
+
+        <div className="card">
+          <h3>⚡ Fast Service</h3>
+        </div>
+
+      </div>
+    </>
+  )
 }
-export default Home
+
+export default Home;
