@@ -1,9 +1,20 @@
-import { useState } from "react"
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
 
-  const [email,setEmail]=useState("")
-  const [password,setPassword]=useState("")
+  const [email,setEmail]=useState("");
+  const [password,setPassword]=useState("");
+
+  const navigate = useNavigate();
+
+  const handleLogin = () => {
+    if (email && password) {
+      navigate("/menu");
+    } else {
+      alert("Enter email and password");
+    }
+  };
 
   return (
     <div className="login">
@@ -19,6 +30,7 @@ const Login = () => {
           onChange={(e)=>setEmail(e.target.value)}
         />
         <br/>
+
         <input
           type="password"
           placeholder="Password"
@@ -26,12 +38,13 @@ const Login = () => {
           onChange={(e)=>setPassword(e.target.value)}
         />
         <br/>
-        <button>Login</button>
+
+        <button onClick={handleLogin}>Login</button>
 
       </div>
 
     </div>
-  )
-}
+  );
+};
 
-export default Login
+export default Login;
